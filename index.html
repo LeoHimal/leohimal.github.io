@@ -1,10 +1,210 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himal Poudel</title>
+    <meta name="description" content="Himal | Creative Developer Portfolio">
+    <title>Himal | Creative Developer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0a0a0a;
+            --card-bg: #141414;
+            --accent-color: #10b981; 
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+
+        section {
+            padding: 8rem 0;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: var(--transition);
+        }
+
+        section.visible { opacity: 1; transform: translateY(0); }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .accent { color: var(--accent-color); }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            z-index: 1000;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--accent-color); }
+
+        #hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+        .title-tag {
+            text-transform: uppercase;
+            letter-spacing: 0.3rem;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .bio-text { max-width: 600px; font-size: 1.25rem; color: var(--text-secondary); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid #222;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
+        .contact-card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+        .contact-card a { color: var(--text-secondary); text-decoration: none; display: block; margin-bottom: 0.5rem; }
+
+        .social-links { display: flex; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+        .social-btn {
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--text-secondary);
+            border-radius: 2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover { background: var(--accent-color); border-color: var(--accent-color); color: #000; }
+
+        @media (max-width: 768px) {
+            section { padding: 5rem 0; }
+            .nav-links { display: none; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Site on maintenance</h1>
+
+    <nav>
+        <div class="container nav-content">
+            <div style="font-weight: 600; letter-spacing: 1px;">HIMAL.</div>
+            <div class="nav-links">
+                <a href="#hero">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#socials">Social</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <section id="hero">
+            <span class="title-tag">Available for Global Projects</span>
+            <h1>I'm <span class="accent">Himal</span>, a Creative Developer crafting digital solutions.</h1>
+            <p class="bio-text">
+                Based in **Nepal**, I bridge the gap between complex engineering and elegant design. I focus on building accessible, high-performance web applications that tell a story.
+            </p>
+        </section>
+
+        <section id="contact">
+            <span class="title-tag">Get in touch</span>
+            <h2>Let's collaborate on your next <span class="accent">big idea</span>.</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>Email</h3>
+                    <a href="mailto:hello@himal.dev">hello@himal.dev</a>
+                    <a href="mailto:work@himal.dev">work@himal.dev</a>
+                </div>
+                <div class="contact-card">
+                    <h3>Location</h3>
+                    <address style="font-style: normal; color: var(--text-secondary);">
+                        Kathmandu, Nepal<br>
+                        Available for Remote Work
+                    </address>
+                </div>
+            </div>
+        </section>
+
+        <section id="socials">
+            <span class="title-tag">Connect</span>
+            <h2>Digital Presence</h2>
+            <div class="social-links">
+                <a href="#" class="social-btn">LinkedIn</a>
+                <a href="#" class="social-btn">GitHub</a>
+                <a href="#" class="social-btn">Twitter</a>
+                <a href="#" class="social-btn">Instagram</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="padding: 4rem 0; text-align: center; color: var(--text-secondary); font-size: 0.8rem; border-top: 1px solid #1a1a1a;">
+        <div class="container">
+            &copy; 2026 Himal. Designed with intentionality.
+        </div>
+    </footer>
+
+    <script>
+        const observerOptions = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Parallax effect for the hero name
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroTitle = document.querySelector('h1');
+            if(window.innerWidth > 768) {
+                heroTitle.style.transform = `translateY(${scrolled * 0.15}px)`;
+            }
+        });
+    </script>
 </body>
 </html>
